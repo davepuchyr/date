@@ -1,0 +1,6 @@
+**/*.cmake
+**/*.kdev*
+**/CMakeCache.txt
+**/CMakeFiles
+**/Makefile
+
