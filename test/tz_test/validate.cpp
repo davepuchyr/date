@@ -14,19 +14,20 @@ main()
     for (auto& link : db.links)
         names.push_back(link.name());
     std::sort(names.begin(), names.end());
+    auto zeros = std::chrono::seconds{ 0 };
+    auto zerom = std::chrono::minutes{ 0 };
     for (auto const& name : names)
     {
         std::cout << name << '\n';
-        /* dmjp: c++11 doesn't have literals
         auto z = locate_zone(name);
-        auto begin = day_point(jan/1/year::min()) + 0s;
-        auto end   = day_point(jan/1/2035) + 0s;
+        auto begin = day_point(jan/1/year::min()) + zeros;
+        auto end   = day_point(jan/1/2035) + zeros;
         auto info = z->get_info(begin, tz::utc);
         std::cout << "Initially:           ";
-        if (info.offset >= 0s)
+        if (info.offset >= zeros)
             std::cout << '+';
         std::cout << make_time(info.offset);
-        if (info.save == 0min)
+        if (info.save == zerom)
             std::cout << " standard ";
         else
             std::cout << " daylight ";
@@ -44,10 +45,10 @@ main()
             auto ymd = year_month_day(dp);
             auto time = make_time(begin - dp);
             std::cout << ymd << 'T' << time << "Z ";
-            if (info.offset >= 0s)
+            if (info.offset >= zeros)
                 std::cout << '+';
             std::cout << make_time(info.offset);
-            if (info.save == 0min)
+            if (info.save == zerom)
                 std::cout << " standard ";
             else
                 std::cout << " daylight ";
@@ -57,6 +58,5 @@ main()
             prev_save = info.save;
         }
         std::cout << '\n';
-        ~dmjp */
     }
 }
