@@ -17,6 +17,7 @@ main()
     for (auto const& name : names)
     {
         std::cout << name << '\n';
+        /* dmjp: c++11 doesn't have literals
         auto z = locate_zone(name);
         auto begin = day_point(jan/1/year::min()) + 0s;
         auto end   = day_point(jan/1/2035) + 0s;
@@ -56,5 +57,6 @@ main()
             prev_save = info.save;
         }
         std::cout << '\n';
+        ~dmjp */
     }
 }
