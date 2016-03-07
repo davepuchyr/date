@@ -182,7 +182,7 @@ ambiguous_local_time::make_msg(std::chrono::time_point<std::chrono::system_clock
 
 class Rule;
 
-struct DATE_EXPORT Info
+struct Info
 {
     second_point         begin;
     second_point         end;
