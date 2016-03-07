@@ -66,6 +66,8 @@ Technically any OS may use the mapping process but currently only Windows does u
 #include <utility>
 #include <vector>
 
+#include "date_export.h"
+
 namespace date
 {
 
@@ -180,7 +182,7 @@ ambiguous_local_time::make_msg(std::chrono::time_point<std::chrono::system_clock
 
 class Rule;
 
-struct Info
+struct DATE_EXPORT Info
 {
     second_point         begin;
     second_point         end;
@@ -192,7 +194,7 @@ struct Info
 std::ostream&
 operator<<(std::ostream& os, const Info& r);
 
-class Zone
+class DATE_EXPORT Zone
 {
 private:
     struct zonelet;
@@ -614,13 +616,13 @@ const TZ_DB& get_tzdb();
 const TZ_DB& reload_tzdb();
 const TZ_DB& reload_tzdb(const std::string& new_install);
 
-const Zone* locate_zone(const std::string& tz_name);
+DATE_EXPORT const Zone* locate_zone(const std::string& tz_name);
 #ifdef TZ_TEST
 #ifdef _WIN32
 const Zone* locate_native_zone(const std::string& native_tz_name);
 #endif
 #endif
-const Zone* current_zone();
+DATE_EXPORT const Zone* current_zone();
 
 class utc_clock
 {

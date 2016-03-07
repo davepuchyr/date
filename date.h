@@ -33,6 +33,8 @@
 #include <ratio>
 #include <stdexcept>
 
+#include "date_export.h"
+
 namespace date
 {
 

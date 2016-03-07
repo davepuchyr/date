@@ -82,7 +82,7 @@ namespace date
 // +---------------------+
 
 #if _WIN32 // TODO: sensible default for all platforms.
-static std::string install{ "c:\\tzdata" };
+static std::string install{ "c:\\opt\\tzdata-latest" }; // HARD-CODED
 #else
 static std::string install{ "/opt/tzdata-latest" }; // HARD-CODED
 #endif
