@@ -1,3 +1,5 @@
+**/*_export.h
+**/*.cbp
 **/*.cmake
 **/*.kdev*
 **/CMakeCache.txt
