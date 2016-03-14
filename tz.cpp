@@ -87,7 +87,7 @@ static std::string install{ "c:\\opt\\tzdata-latest" }; // HARD-CODED
 static std::string install{ "/opt/tzdata-latest" }; // HARD-CODED
 #endif
 
-static const std::vector<std::string> files =
+static std::vector<std::string> files =
 {
     "africa", "antarctica", "asia", "australasia", "backward", "etcetera", "europe",
     "pacificnew", "northamerica", "southamerica", "systemv", "leapseconds"
@@ -1999,9 +1999,10 @@ reload_tzdb()
 }
 
 const TZ_DB&
-reload_tzdb(const std::string& new_install)
+reload_tzdb(const std::string& new_install, std::vector<std::string> new_files)
 {
     install = new_install;
+    files = new_files;
     return access_tzdb() = init_tzdb();
 }
 
