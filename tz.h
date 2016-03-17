@@ -612,9 +612,9 @@ struct TZ_DB
 
 std::ostream& operator<<(std::ostream& os, const TZ_DB& db);
 
-const TZ_DB& get_tzdb();
-const TZ_DB& reload_tzdb();
-const TZ_DB& reload_tzdb(const std::string& new_install, std::vector<std::string> new_files);
+DATE_EXPORT const TZ_DB& get_tzdb();
+DATE_EXPORT const TZ_DB& reload_tzdb();
+DATE_EXPORT const TZ_DB& reload_tzdb(const std::string& new_install, std::vector<std::string> new_files);
 
 DATE_EXPORT const Zone* locate_zone(const std::string& tz_name);
 #ifdef TZ_TEST
